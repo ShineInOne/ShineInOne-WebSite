@@ -6,7 +6,7 @@ using WebAPI.Models;
 namespace WebAPI.Controllers
 {
     [ApiController]
-    [Route("api/products")]
+    [Route("api/[controller]")]
     public class ProductController : ControllerBase
     {
         private readonly AppDbContext _context;
