@@ -44,6 +44,8 @@ coverage/
 # Build
 bin/
 obj/
+**/bin/
+**/obj/
 
 # Testing
 TestResults/
