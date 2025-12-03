@@ -6,7 +6,7 @@ using WebAPI.Models;
 namespace WebAPI.Controllers
 {
     [ApiController]
-    [Route("api/category")]
+    [Route("api/[controller]")]
     public class CategoryController : ControllerBase
     {
         private readonly AppDbContext _context;
