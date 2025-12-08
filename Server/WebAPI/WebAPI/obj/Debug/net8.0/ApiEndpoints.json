@@ -2,7 +2,7 @@
   {
     "ContainingType": "WebAPI.Controllers.CategoryController",
     "Method": "GetAll",
-    "RelativePath": "api/category",
+    "RelativePath": "api/Category",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -12,7 +12,7 @@
   {
     "ContainingType": "WebAPI.Controllers.CategoryController",
     "Method": "Create",
-    "RelativePath": "api/category",
+    "RelativePath": "api/Category",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -28,7 +28,7 @@
   {
     "ContainingType": "WebAPI.Controllers.CategoryController",
     "Method": "GetById",
-    "RelativePath": "api/category/{id}",
+    "RelativePath": "api/Category/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -44,7 +44,7 @@
   {
     "ContainingType": "WebAPI.Controllers.CategoryController",
     "Method": "Update",
-    "RelativePath": "api/category/{id}",
+    "RelativePath": "api/Category/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -65,7 +65,7 @@
   {
     "ContainingType": "WebAPI.Controllers.CategoryController",
     "Method": "Delete",
-    "RelativePath": "api/category/{id}",
+    "RelativePath": "api/Category/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -81,7 +81,7 @@
   {
     "ContainingType": "WebAPI.Controllers.ProductController",
     "Method": "GetAll",
-    "RelativePath": "api/products",
+    "RelativePath": "api/Product",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -91,7 +91,7 @@
   {
     "ContainingType": "WebAPI.Controllers.ProductController",
     "Method": "Create",
-    "RelativePath": "api/products",
+    "RelativePath": "api/Product",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -107,7 +107,7 @@
   {
     "ContainingType": "WebAPI.Controllers.ProductController",
     "Method": "GetById",
-    "RelativePath": "api/products/{id}",
+    "RelativePath": "api/Product/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -123,7 +123,7 @@
   {
     "ContainingType": "WebAPI.Controllers.ProductController",
     "Method": "Update",
-    "RelativePath": "api/products/{id}",
+    "RelativePath": "api/Product/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -144,7 +144,7 @@
   {
     "ContainingType": "WebAPI.Controllers.ProductController",
     "Method": "Delete",
-    "RelativePath": "api/products/{id}",
+    "RelativePath": "api/Product/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,

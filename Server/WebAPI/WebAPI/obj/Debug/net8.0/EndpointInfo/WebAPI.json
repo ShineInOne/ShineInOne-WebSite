@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/category": {
+    "/api/Category": {
       "get": {
         "tags": [
           "Category"
@@ -46,7 +46,7 @@
         }
       }
     },
-    "/api/category/{id}": {
+    "/api/Category/{id}": {
       "get": {
         "tags": [
           "Category"
@@ -130,7 +130,7 @@
         }
       }
     },
-    "/api/products": {
+    "/api/Product": {
       "get": {
         "tags": [
           "Product"
@@ -171,7 +171,7 @@
         }
       }
     },
-    "/api/products/{id}": {
+    "/api/Product/{id}": {
       "get": {
         "tags": [
           "Product"
