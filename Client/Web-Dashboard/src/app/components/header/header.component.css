@@ -1,0 +1,95 @@
+
+.header {
+  width: 100%;
+  padding: 18px 40px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 128, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+}
+
+/* Centered Container */
+.header-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Brand Logo */
+.logo {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #0f6c34;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-left: 15vw;
+}
+
+.logo:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 17px;
+  color: #1f5c39;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+  transition: 0.3s ease;
+}
+
+/* Underline Hover Effect */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: #1ea64a;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover {
+  color: #147537;
+  transform: translateY(-1px);
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* CTA Button */
+.header-btn {
+  background: linear-gradient(135deg, #1ea64a, #16903f);
+  padding: 12px 28px;
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0px 6px 18px rgba(0, 128, 0, 0.15);
+}
+
+.header-btn:hover {
+  background: linear-gradient(135deg, #16903f, #0f7a33);
+  transform: translateY(-2px);
+  box-shadow: 0px 8px 24px rgba(0, 128, 0, 0.2);
+}

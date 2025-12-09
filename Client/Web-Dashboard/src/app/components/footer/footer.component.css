@@ -1,0 +1,84 @@
+/* ================================================
+   Transparent Toned Black Footer (White Text + Blue Hover)
+   ================================================ */
+
+.footer {
+  background: rgba(18, 18, 18, 0.85); /* toned black + transparent */
+  padding: 60px 40px 20px;
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px); /* subtle glassy blur */
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Container Grid */
+.footer-container {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+/* Logo */
+.footer-logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* Social Icons */
+.footer-socials {
+  margin-top: 15px;
+  display: flex;
+  gap: 12px;
+}
+
+.footer-socials a {
+  font-size: 20px;
+  color: #eaeaea;
+  transition: 0.25s ease;
+}
+
+.footer-socials a:hover {
+  color: #3399ff;
+  transform: translateY(-2px);
+}
+
+/* Links Section */
+.footer-section h4 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footer-section a {
+  display: block;
+  color: #e0e0e0;
+  margin-bottom: 8px;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.footer-section a:hover {
+  color: #3399ff;
+  transform: translateX(4px);
+}
+
+/* Contact Text */
+.footer-section p {
+  margin: 5px 0;
+  color: #d0d0d0;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 14px;
+  color: #cccccc;
+}
