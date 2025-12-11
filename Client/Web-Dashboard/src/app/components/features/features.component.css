@@ -1,0 +1,118 @@
+.features-section {
+    background-color: #f0fdf4;
+    /* Light Green */
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+/* Desktop layout */
+@media (min-width: 992px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .features-content {
+        flex: 1;
+        max-width: 500px;
+    }
+
+    .features-image-wrapper {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #166534;
+    /* Dark Green */
+    font-weight: 800;
+    margin-bottom: 40px;
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    .section-title {
+        text-align: left;
+    }
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.feature-item {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(22, 101, 52, 0.1);
+}
+
+.icon-box {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background: #dcfce7;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-item h3 {
+    font-size: 1.25rem;
+    color: #15803d;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.feature-item p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.features-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.features-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0px;
+    /* Cutout image usually looks best without border radius or bg */
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+    transition: transform 0.5s ease;
+}
+
+.features-image:hover {
+    transform: scale(1.02);
+}
