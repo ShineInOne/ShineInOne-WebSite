@@ -1,13 +1,20 @@
 .hero-container {
   display: flex;
-  flex-direction: column; /* Mobile first */
+  flex-direction: column-reverse;
+  /* Stack image on top of text for mobile if desired, or keep column. Let's stick to column for mobile standard */
+  /* Actually standard mobile is often image top or bottom. The original was column. */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 80vh; /* Takes up most of the viewport */
-  padding: 2rem;
-  background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 50%, #e8f5e9 100%); /* Fresh cleaning vibes */
+  min-height: 100vh;
+  /* Fits screen */
+  padding: 80px 20px 20px;
+  /* Top padding accounts for fixed header */
+  background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 50%, #e8f5e9 100%);
   overflow: hidden;
+  position: relative;
 }
+
 
 .hero-content {
   flex: 1;
@@ -22,7 +29,8 @@
   font-family: 'Inter', sans-serif;
   font-size: 2.5rem;
   font-weight: 800;
-  color: #1b5e20; /* Deep Green */
+  color: #1b5e20;
+  /* Deep Green */
   margin-bottom: 1rem;
   line-height: 1.2;
 }
@@ -31,7 +39,8 @@
   font-family: 'Inter', sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #2e7d32; /* Medium Green */
+  color: #2e7d32;
+  /* Medium Green */
   margin-bottom: 1.5rem;
   line-height: 1.4;
 }
@@ -39,7 +48,8 @@
 .hero-body {
   font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
-  color: #455a64; /* Blue Grey */
+  color: #455a64;
+  /* Blue Grey */
   margin-bottom: 2.5rem;
   line-height: 1.6;
 }
@@ -76,7 +86,7 @@
   height: auto;
   max-height: 600px;
   object-fit: contain;
-  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
   border-radius: 20px;
 }
 
@@ -99,12 +109,27 @@
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes fadeInUser {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
