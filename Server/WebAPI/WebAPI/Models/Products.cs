@@ -1,4 +1,6 @@
-﻿namespace WebAPI.Models
+﻿using System.Text.Json.Serialization;
+
+namespace WebAPI.Models
 {
     public class Products
     {
@@ -10,6 +12,8 @@
         public string ImageUrl { get; set; }
         public int CategoryId { get; set; }
         public Categories Category { get; set; }
+
+        [JsonIgnore]
         public ICollection<CartItem> CartItems { get; set; }
     }
 }
