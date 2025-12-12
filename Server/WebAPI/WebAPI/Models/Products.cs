@@ -10,5 +10,6 @@
         public string ImageUrl { get; set; }
         public int CategoryId { get; set; }
         public Categories Category { get; set; }
+        public ICollection<CartItem> CartItems { get; set; }
     }
 }

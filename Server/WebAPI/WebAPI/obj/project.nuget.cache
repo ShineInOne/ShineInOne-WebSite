@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qN3HoTykpN8=",
+  "dgSpecHash": "FOrhyWLvMi4=",
   "success": true,
-  "projectFilePath": "D:\\ShineInONE\\ShineInOne-WebSite\\Server\\WebAPI\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "D:\\ShineInONE\\ShineInOne-WebSite\\ShineInOne-WebSite\\Server\\WebAPI\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mhdna\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\mhdna\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
@@ -88,15 +88,5 @@
     "C:\\Users\\mhdna\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\mhdna\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://pkgs.dev.azure.com/PPLIO/PPLIO/_packaging/PPLIO-Core-Feed/nuget/v3/index.json.",
-      "projectPath": "D:\\ShineInONE\\ShineInOne-WebSite\\Server\\WebAPI\\WebAPI\\WebAPI.csproj",
-      "warningLevel": 1,
-      "filePath": "D:\\ShineInONE\\ShineInOne-WebSite\\Server\\WebAPI\\WebAPI\\WebAPI.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }
