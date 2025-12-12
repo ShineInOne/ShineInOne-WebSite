@@ -1,14 +1,10 @@
-﻿using System.Text.Json.Serialization;
-
-namespace WebAPI.Models
+﻿namespace WebAPI.DTOs.User
 {
-    public class User
+    public class RegisterUserDto
     {
-        
-        public int Id { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }
-        public string PasswordHash { get; set; }
+        public string Password { get; set; }
         public string Phone { get; set; }
 
         public string AddressLine1 { get; set; }
@@ -17,12 +13,5 @@ namespace WebAPI.Models
         public string State { get; set; }
         public string PostalCode { get; set; }
         public string Country { get; set; }
-
-        public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
-
-        [JsonIgnore]
-        public ICollection<CartItem> CartItems { get; set; }
     }
-
 }
