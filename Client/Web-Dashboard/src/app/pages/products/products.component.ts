@@ -13,12 +13,13 @@ import { CartService } from '../../services/cart.service';
 export class ProductsComponent implements OnInit {
 
   products: any[] = [];
+  topProducts: any[] = [];
   userId = 1; // temporary until login is implemented
 
   constructor(
     private productService: ProductService,
     private cartService: CartService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.loadProducts();
@@ -28,6 +29,7 @@ export class ProductsComponent implements OnInit {
     this.productService.getProducts()
       .subscribe(data => {
         this.products = data;
+        this.topProducts = data.filter(p => p.categoryId === 1);
       });
   }
 
@@ -42,6 +44,15 @@ export class ProductsComponent implements OnInit {
         alert("Could not add to cart");
       }
     });
+  }
+
+  scroll(container: HTMLElement, direction: 'left' | 'right') {
+    const scrollAmount = 300; // Adjust scroll distance as needed
+    if (direction === 'left') {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
   }
 
 }
