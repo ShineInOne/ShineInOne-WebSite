@@ -1,3 +1,27 @@
+<div class="top-products-section" *ngIf="topProducts.length > 0">
+    <h2 class="section-title">Top Deals For You</h2>
+    
+    <div class="scroll-wrapper">
+        <button class="scroll-btn left" (click)="scroll(scrollContainer, 'left')">❮</button>
+        
+        <div class="horizontal-scroll-container" #scrollContainer>
+            <div class="card horizontal-card" *ngFor="let p of topProducts">
+                <img [src]="p.imageUrl" alt="product image">
+                <div class="card-content">
+                    <h3>{{p.name}}</h3>
+                    <p class="desc">{{p.description}}</p>
+                    <div class="price">₹ {{p.price}}</div>
+                    <button class="add-btn" (click)="addToCart(p.id)">
+                        <span class="icon">🛒</span> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <button class="scroll-btn right" (click)="scroll(scrollContainer, 'right')">❯</button>
+    </div>
+</div>
+
 <h1 id="products-section" style="text-align: center; margin: 2rem 0;">All Products</h1>
 <div class="product-grid">
     <div class="card" *ngFor="let p of products">
