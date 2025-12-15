@@ -42,3 +42,71 @@
   color: green;
   font-size: 18px;
 }
+
+.add-btn {
+  width: calc(100% - 20px);
+  margin: 14px 10px;
+  padding: 12px 0;
+
+  /* More opaque + richer color */
+  background: linear-gradient(145deg, #20c55a, #0f9c46);
+  color: white;
+
+  border: none;
+  
+  /* More rounded */
+  border-radius: 14px;
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  /* Softer, premium shadow */
+  box-shadow: 0 4px 12px rgba(0, 128, 0, 0.3);
+
+  /* Smooth transitions */
+  transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+  /* Slight brightness & subtle lift */
+  background: linear-gradient(145deg, #19b04f, #0c873a);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 128, 0, 0.4);
+}
+
+.icon {
+  font-size: 19px;
+  opacity: 0.95; /* little more visible */
+}
+
+.add-btn {
+  width: 90%;
+  margin: 10px auto 0;
+  display: block;
+  background: #16a34a;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  font-size: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.25s;
+  opacity: 0.95;
+}
+
+.add-btn:hover {
+  background: #0e7e38;
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.add-btn .icon {
+  margin-right: 6px;
+  font-size: 17px;
+}

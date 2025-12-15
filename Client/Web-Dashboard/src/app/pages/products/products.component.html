@@ -5,5 +5,9 @@
         <h3>{{p.name}}</h3>
         <p class="desc">{{p.description }}</p>
         <div class="price">₹ {{p.price }}</div>
+        <button class="add-btn" (click)="addToCart(p.id)">
+            <span class="icon">🛒</span> Add to Cart
+        </button>
+
     </div>
 </div>
