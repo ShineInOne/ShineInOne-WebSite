@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HeroComponent {
     scrollToProducts() {
-        const productsSection = document.getElementById('products-section');
+        const productsSection = document.getElementById('top-products');
         if (productsSection) {
             productsSection.scrollIntoView({ behavior: 'smooth' });
         }

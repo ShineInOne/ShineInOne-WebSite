@@ -41,6 +41,16 @@
   /* Removed heavy margin-left to stick to container centering */
   display: flex;
   align-items: center;
+  gap: 12px;
+  /* Added gap between logo and text */
+}
+
+.brand-logo {
+  height: 48px;
+  /* Adjusted size for good visibility */
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .logo:hover {
