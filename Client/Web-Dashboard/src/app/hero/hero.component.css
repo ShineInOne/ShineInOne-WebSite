@@ -1,128 +1,212 @@
+/* Premium Hero Styling */
 .hero-container {
   display: flex;
   flex-direction: column-reverse;
-  /* Stack image on top of text for mobile if desired, or keep column. Let's stick to column for mobile standard */
-  /* Actually standard mobile is often image top or bottom. The original was column. */
-  flex-direction: column;
+  /* Mobile first */
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  /* Fits screen */
-  padding: 80px 20px 20px;
-  /* Top padding accounts for fixed header */
-  background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 50%, #e8f5e9 100%);
+  /* Reduced height - removed min-height: 90vh */
+  padding: 60px 5% 40px;
+  /* Reduced padding */
+  background: #4bb369;
+  /* Matching Green Background */
+  background: linear-gradient(135deg, #4bb369 0%, #3e9e5a 100%);
+  /* slight gradient match */
   overflow: hidden;
   position: relative;
+  text-align: center;
+  /* Center align container */
+  padding-bottom: 0;
+  /* Remove bottom padding to let platform fit flush if needed */
 }
 
+.hero-bottom-platform {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  /* Height of the white bar */
+  background: white;
+  z-index: 1;
+}
 
 .hero-content {
   flex: 1;
-  max-width: 600px;
-  text-align: center;
-  margin-bottom: 2rem;
+  max-width: 800px;
+  /* Increased max-width for centered look */
   z-index: 10;
-  animation: fadeInUser 1s ease-out;
+  /* Text above everything */
+  text-align: center;
+  /* Ensure text is centered */
+  margin: 0 auto;
+  /* Center block */
+  color: white;
+  /* Switch text to white for contrast on dark green */
 }
 
+/* Typography */
 .hero-headline {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 2.5rem;
-  font-weight: 800;
-  color: #1b5e20;
-  /* Deep Green */
-  margin-bottom: 1rem;
+  font-weight: 700;
+  color: white;
+  /* White text on green bg */
   line-height: 1.2;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
 }
 
 .hero-subhead {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #2e7d32;
-  /* Medium Green */
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #e8f5e9;
+  /* Light green/white */
   margin-bottom: 1.5rem;
-  line-height: 1.4;
+}
+
+.hero-features {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  /* White features */
+  letter-spacing: 0.5px;
+}
+
+.feature-divider {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .hero-body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.1rem;
-  color: #455a64;
-  /* Blue Grey */
-  margin-bottom: 2.5rem;
-  line-height: 1.6;
+  display: none;
+  /* Ensure removed */
 }
 
+/* CTA Button */
 .hero-cta {
-  background: linear-gradient(45deg, #43a047, #66bb6a);
+  background: #054d24;
+  /* White button for contrast */
   color: white;
+  /* Dark Green Text */
   border: none;
-  padding: 1rem 2.5rem;
-  font-size: 1.2rem;
+  padding: 1rem 3rem;
+  font-size: 1rem;
   font-weight: 700;
-  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(67, 160, 71, 0.4);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .hero-cta:hover {
+  background: #f1f8e9;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(67, 160, 71, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Image */
 .hero-image-wrapper {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  animation: float 6s ease-in-out infinite;
+  margin-bottom: -40px;
+  /* Push image down into the white platform */
+  width: 100%;
+  z-index: 5;
+  /* Above platform */
 }
 
 .hero-image {
   max-width: 100%;
   height: auto;
-  max-height: 600px;
+  max-height: 450px;
+  /* Reduced height constraint */
   object-fit: contain;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
-  border-radius: 20px;
+  /* No harsh shadow to blend better, or keep soft one */
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
 }
 
-@media (min-width: 768px) {
+/* Desktop Styles */
+@media (min-width: 992px) {
   .hero-container {
     flex-direction: row;
-    padding: 4rem;
+    padding: 80px 10% 40px;
     text-align: left;
+    /* Reset to left if split view, BUT user asked for centered heading.
+           "center the heading text in the hero section" 
+           If split view (left text, right image), heading is usually left.
+           If user wants centered heading, maybe they want stacked layout or just centered text in split view?
+           "3.center the heading text in the hero section"
+           Let's try a centered layout even on desktop or keep split but center text within left col? 
+           Usually "Center the heading" implies a centered layout like Apple style. 
+           Let's go for specific split but with centered text alignment if that's what meant, 
+           OR simply a centered stack. 
+           Given "reduce height... best fit... center heading", a centered stack (text top, image bottom or vice versa) often works best for "seamless" blending.
+           However, "change between image and hero section... not be a change" implies the image background matches the hero background.
+           The image is likely a cutout or has a solid background. 
+           Let's stick to split view for desktop as it's standard, but CENTRE the text in the text column?
+           Actually, "Center the heading text" -> `text-align: center`.
+           Let's do that.
+        */
+    align-items: center;
   }
 
   .hero-content {
-    text-align: left;
-    margin-right: 2rem;
+    text-align: center;
+    /* Explicit request */
+    margin-right: 0;
+    /* Remove margin if stacking or centering */
+    margin-bottom: 0;
+    flex: 1;
+  }
+
+  /* If we want split view with centered text, it looks odd. 
+     Maybe they want the whole thing centered? 
+     Let's allow flex-direction row but keep text centered in its box? 
+     Or maybe they want Image Left, Text Right? 
+     Let's stick to previous layout (Text Left, Image Right) but align text center? 
+     Or maybe change to Column layout on desktop too? 
+     Let's try keeping it row but centering the content within the 50% width.
+  */
+
+  .hero-container {
+    flex-direction: row;
+    justify-content: center;
+    /* Center content */
+    gap: 2rem;
+  }
+
+  .hero-content {
+    text-align: center;
+    /* Centered heading */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-features {
+    justify-content: center;
+  }
+
+  .hero-image-wrapper {
+    justify-content: center;
     margin-bottom: 0;
   }
-
-  .hero-headline {
-    font-size: 3.5rem;
-  }
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-@keyframes fadeInUser {
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -132,4 +216,8 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.hero-content {
+  animation: fadeIn 1s ease-out;
 }
