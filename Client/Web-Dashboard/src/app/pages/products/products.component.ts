@@ -55,4 +55,42 @@ export class ProductsComponent implements OnInit {
     }
   }
 
+
+  // Mock data helpers
+  getRating(id: number): number {
+    // Deterministic pseudo-random based on ID
+    const seed = id * 12345;
+    const rating = (seed % 15) / 10 + 3.5; // Range 3.5 to 5.0
+    return Math.min(5, Math.max(3.5, parseFloat(rating.toFixed(1))));
+  }
+
+  getReviewCount(id: number): number {
+    const seed = id * 67890;
+    return (seed % 9000) + 50; // Range 50 to 9050
+  }
+
+  getMRP(price: number): number {
+    // MRP is typically 20-50% higher than selling price
+    return Math.round(price * 1.4);
+  }
+
+  getDiscount(price: number): number {
+    const mrp = this.getMRP(price);
+    return Math.round(((mrp - price) / mrp) * 100);
+  }
+
+  // Generate an array of stars (1 for full, 0.5 for half, 0 for empty)
+  getStars(rating: number): number[] {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      if (rating >= i) {
+        stars.push(1);
+      } else if (rating >= i - 0.5) {
+        stars.push(0.5);
+      } else {
+        stars.push(0);
+      }
+    }
+    return stars;
+  }
 }

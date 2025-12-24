@@ -1,25 +1,31 @@
+/* Amazon Style Product Grid */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
-  justify-content: center;
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
   padding: 20px;
-  margin-bottom: 150px;
+  max-width: 1500px;
+  margin: 0 auto 50px;
+  background-color: #ffffff;
+  /* Amazon usually is white/light grey */
 }
 
+/* Base Card (Restored for Top Products) */
 .card {
   border-radius: 12px;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
   overflow: hidden;
   padding-bottom: 12px;
   transition: transform 0.2s;
 }
 
-.card:hover {
+
+.card:not(.amazon-card):hover {
   transform: translateY(-4px);
 }
 
+/* --- Restored Legacy Styles for Top Deals --- */
 .card img {
   width: 100%;
   height: 180px;
@@ -44,73 +50,235 @@
   font-size: 18px;
 }
 
-.add-btn {
+/* Original Add Button for Top Deals */
+.card .add-btn {
   width: calc(100% - 20px);
   margin: 14px 10px;
   padding: 12px 0;
-
-  /* More opaque + richer color */
-  background: linear-gradient(145deg, #20c55a, #0f9c46);
+  background: linear-gradient(145deg, #006323, #034b1e);
   color: white;
-
   border: none;
-
-  /* More rounded */
   border-radius: 14px;
-
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-
-  /* Softer, premium shadow */
   box-shadow: 0 4px 12px rgba(0, 128, 0, 0.3);
-
-  /* Smooth transitions */
   transition: all 0.3s ease;
 }
 
-.add-btn:hover {
-  /* Slight brightness & subtle lift */
+.card .add-btn:hover {
   background: linear-gradient(145deg, #19b04f, #0c873a);
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(0, 128, 0, 0.4);
 }
 
-.icon {
+.card .icon {
   font-size: 19px;
   opacity: 0.95;
-  /* little more visible */
 }
 
-.add-btn {
-  width: 90%;
-  margin: 10px auto 0;
-  display: block;
-  background: #16a34a;
-  color: white;
-  border: none;
-  padding: 12px 0;
-  font-size: 15px;
-  border-radius: 12px;
+/* --- End Legacy Styles --- */
+
+
+/* Amazon Card wrapper */
+.card.amazon-card {
+  border: 1px solid #ffffff;
+  border-radius: 0px;
+  /* Amazon is boxy usually, maybe slight radius */
+  background: #ffffff;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  transition: none;
+  /* simple */
+  box-shadow: none;
+}
+
+.card.amazon-card:hover {
+  transform: none;
+  border-color: #d5d9d9;
+  /* box-shadow: 0 0 0 1px #d5d9d9; Optional highlight */
+}
+
+/* Image Container */
+.amazon-card .image-container {
+  height: 240px;
+  padding: 20px 20px 0;
+  background: #f7f7f7;
+  /* Amazon uses grey bg for image area sometimes or pure white. White is safer. */
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.amazon-card img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  /* Helps if images have white bg */
+}
+
+/* Content Area */
+.amazon-card .card-content {
+  padding: 0 12px 12px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Title */
+.amazon-card .product-title {
+  font-family: "Amazon Ember", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0F1111;
+  font-weight: 500;
+  margin: 0 0 4px;
+
+  /* Clamp to 4 lines max */
+  display: -webkit-box;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: auto;
+}
+
+.amazon-card .product-title:hover {
+  color: #c7511f;
+  /* Amazon orange hover */
   cursor: pointer;
-  transition: 0.25s;
-  opacity: 0.95;
 }
 
-.add-btn:hover {
-  background: #0e7e38;
-  opacity: 1;
-  transform: translateY(-2px);
+/* Description */
+.amazon-card .product-desc {
+  font-size: 13px;
+  color: #565959;
+  margin: 0 0 4px;
+  /* Clamp to 2 lines */
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.add-btn .icon {
-  margin-right: 6px;
-  font-size: 17px;
+/* Ratings */
+.amazon-card .rating-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.amazon-card .stars {
+  color: #DE7921;
+  /* Amazon Star Orange */
+  letter-spacing: -2px;
+  /* Pull stars tighter */
+  font-size: 18px;
+}
+
+.amazon-card .review-count {
+  color: #007185;
+  /* Amazon Link Color */
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+/* Price Block */
+.amazon-card .price-block {
+  margin: 4px 0 8px;
+  line-height: 1.2;
+}
+
+.amazon-card .currency-symbol {
+  font-size: 14px;
+  vertical-align: text-top;
+  top: 4px;
+  position: relative;
+  font-weight: 500;
+}
+
+.amazon-card .price-whole {
+  font-size: 28px;
+  font-weight: 500;
+  color: #0F1111;
+}
+
+.amazon-card .mrp-block {
+  font-size: 12px;
+  color: #565959;
+  margin-top: 4px;
+  display: flex;
+  /* Ensure inline layout */
+  gap: 4px;
+  align-items: baseline;
+}
+
+.amazon-card .mrp-value {
+  text-decoration: line-through;
+}
+
+.amazon-card .discount {
+  /* Amazon doesn't always show % off in search, but shows "Limited time" etc. 
+       User image shows just MRP crossed. 
+       I will keep discount subtle or remove if clutter. 
+       User plan kept it. */
+  font-weight: 400;
+}
+
+/* Add to Cart Button */
+.amazon-card .add-btn.amazon-btn {
+  /* Reset previous .add-btn styles first if needed, or just override */
+  margin: auto 0 0;
+  /* Push to bottom */
+  width: 100%;
+  /* Full width or small pill */
+  display: block;
+  float: none;
+
+  background: #054d24;
+  /* Hero Green */
+  color: #fff;
+  border: 1px solid #054d24;
+
+  border-radius: 20px;
+  /* Pill shape */
+  font-size: 13px;
+  padding: 8px 12px;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(213, 217, 217, .5);
+  transition: all 0.2s;
+}
+
+.amazon-card .add-btn.amazon-btn:hover {
+  background: #033a1b;
+  /* Darker shade */
+  box-shadow: 0 2px 5px rgba(213, 217, 217, .5);
+  transform: none;
+  /* Remove legacy lift */
+}
+
+/* Legacy cleanup/support overrides for Top Products if they still use .card */
+/* Resetting .card transforms for amazon-card specifically */
+.amazon-card.card:hover {
+  transform: none;
 }
 
 /* --- Top Products Section --- */
