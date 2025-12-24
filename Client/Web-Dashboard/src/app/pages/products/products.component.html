@@ -23,15 +23,47 @@
 </div>
 
 <h1 id="products-section" style="text-align: center; margin: 2rem 0;">All Products</h1>
-<div class="product-grid">
-    <div class="card" *ngFor="let p of products">
-        <img [src]="p.imageUrl" alt="product image">
-        <h3>{{p.name}}</h3>
-        <p class="desc">{{p.description }}</p>
-        <div class="price">₹ {{p.price }}</div>
-        <button class="add-btn" (click)="addToCart(p.id)">
-            <span class="icon">🛒</span> Add to Cart
-        </button>
 
+<div class="product-grid">
+    <div class="card amazon-card" *ngFor="let p of products">
+        <div class="image-container">
+            <img [src]="p.imageUrl" alt="{{p.name}}">
+        </div>
+        
+        <div class="card-content">
+            <h3 class="product-title" title="{{p.name}}">{{p.name}}</h3>
+            
+            <p class="product-desc" title="{{p.description}}">{{p.description}}</p>
+            
+            <div class="rating-container">
+                <div class="stars">
+                    <span *ngFor="let s of getStars(getRating(p.id))" 
+                          [class.full-star]="s === 1" 
+                          [class.half-star]="s === 0.5" 
+                          [class.empty-star]="s === 0">
+                        <ng-container *ngIf="s === 1">★</ng-container>
+                        <ng-container *ngIf="s === 0.5">★</ng-container> <!-- Simplified for text, styling handles partial -->
+                        <ng-container *ngIf="s === 0">☆</ng-container>
+                    </span>
+                </div>
+                <span class="review-count">{{getReviewCount(p.id) | number}}</span>
+            </div>
+
+            <div class="price-block">
+                <span class="currency-symbol">₹</span>
+                <span class="price-whole">{{p.price | number:'1.0-0'}}</span>
+                
+                <div class="mrp-block">
+                    <span class="mrp-label">M.R.P: </span>
+                    <span class="mrp-value">₹{{getMRP(p.price) | number}}</span>
+                    <span class="discount">({{getDiscount(p.price)}}% off)</span>
+                </div>
+            </div>
+
+            <button class="add-btn amazon-btn" (click)="addToCart(p.id)">
+                Add to Cart
+            </button>
+        </div>
     </div>
 </div>
+
