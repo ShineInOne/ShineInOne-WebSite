@@ -27,3 +27,23 @@
     width: 35px;
     height: 35px;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+app-root {
+  display: block;
+  height: 100%;
+}
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;              /* 👈 pushes footer down */
+  padding-bottom: 40px; /* optional spacing */
+}

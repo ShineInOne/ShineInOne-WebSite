@@ -50,4 +50,17 @@ export class CartComponent implements OnInit {
       return sum + (item.product.price * item.quantity);
     }, 0);
   }
+  clearCart() {
+  this.cartService.clearCart(this.userId).subscribe({
+    next: () => {
+      // ✅ Clear UI immediately
+      this.cartItems = [];
+    },
+    error: (err) => {
+      console.error('Clear cart failed', err);
+      alert('Could not clear cart');
+    }
+  });
+}
+
 }

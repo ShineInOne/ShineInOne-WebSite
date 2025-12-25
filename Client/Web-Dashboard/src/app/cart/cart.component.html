@@ -1,30 +1,30 @@
-<h2 class="title">Your Cart</h2>
-
-<div *ngIf="cartItems.length === 0" class="empty-msg">
-  Your cart is empty.
-</div>
-
-<div class="cart-list" *ngFor="let item of cartItems">
-  
-  <img [src]="item.product.imageUrl" class="cart-img">
-
-  <div class="details">
-    <h3>{{ item.product.name }}</h3>
-    <p class="price">₹ {{ item.product.price }}</p>
-
-    <div class="qty-box">
-      <button (click)="updateQty(item, -1)">−</button>
-      <span>{{ item.quantity }}</span>
-      <button (click)="updateQty(item, +1)">+</button>
-    </div>
-
-    <button class="remove-btn" (click)="removeItem(item.id)">Remove</button>
-  </div>
-
-</div>
-
+<h2 class="title">🛒 Your Cart</h2>
+ <!-- Empty Cart --> 
+<div *ngIf="cartItems.length === 0" class="empty-msg"> Your cart is empty. </div>
+ <!-- Cart Items --> 
+<div class="cart-list" *ngFor="let item of cartItems"> 
+  <img [src]="item.product.imageUrl" class="cart-img"> 
+  <div class="details"> 
+    <h3>{{ item.product.name }}</h3> 
+    <p class="price">₹ {{ item.product.price }}</p> 
+    <div class="qty-box"> 
+      <button (click)="updateQty(item, -1)">-</button> 
+      <span>{{ item.quantity }}</span> 
+      <button (click)="updateQty(item, +1)">+</button> 
+    </div> <button class="remove-btn" (click)="removeItem(item.id)"> Remove </button> 
+  </div> 
+</div> <!-- TOTAL SECTION --> 
 <!-- TOTAL SECTION -->
 <div class="total-box" *ngIf="cartItems.length > 0">
   <h3>Total: ₹ {{ getTotal() }}</h3>
-  <button class="checkout-btn">Proceed to Checkout</button>
+
+  <div class="cart-actions">
+    <button class="clear-btn" (click)="clearCart()">
+      Clear Cart
+    </button>
+
+    <button class="checkout-btn">
+      Proceed to Checkout
+    </button>
+  </div>
 </div>

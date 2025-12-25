@@ -104,3 +104,34 @@
 .checkout-btn:hover {
   background: #087a36;
 }
+.cart-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.clear-btn {
+  background: rgba(255, 159, 0, 0.25); /* opaque version of checkout color */
+  color: #5a3b00;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.clear-btn:hover {
+  background: rgba(255, 159, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.checkout-btn {
+  background: #ff9f00;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}

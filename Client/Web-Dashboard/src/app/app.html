@@ -1,9 +1,16 @@
-<app-header></app-header>
-<app-hero></app-hero>
-<app-products></app-products>
-<app-features></app-features>
-<app-footer></app-footer>
+<div class="app-layout">
+  <app-header></app-header>
 
-<a href="https://wa.me/917902241225" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+  <main class="page-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <app-footer></app-footer>
+</div>
+
+<a href="https://wa.me/917902241225"
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer">
   <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
 </a>
